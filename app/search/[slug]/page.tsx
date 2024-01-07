@@ -11,6 +11,9 @@ type props = {
 
 const Searchpage = ({ params: { slug } }: props) => {
   const newSlug = decodeURI(slug);
+
+  //Get searched Movies
+  
   return (
     <>
       {slug ? (

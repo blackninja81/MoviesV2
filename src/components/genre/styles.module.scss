@@ -1,0 +1,26 @@
+.Genre{
+    h2{
+        margin: 1rem;
+        font-size: 40px;
+    }
+}
+.mainGenre {
+  margin: 1rem;
+  display: grid;
+  gap: 50px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.genre{
+    display: flex;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 20px;
+    transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;    }
+}
