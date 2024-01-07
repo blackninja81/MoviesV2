@@ -1,4 +1,5 @@
 "use client"
+import styles from './header/styles.module.scss'
 
 import * as React from "react"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
@@ -24,6 +25,7 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
+      <div className={styles.toggle}>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
@@ -35,6 +37,7 @@ export function ModeToggle() {
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
+    </div>
     </DropdownMenu>
   )
 }

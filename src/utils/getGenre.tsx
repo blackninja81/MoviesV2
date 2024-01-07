@@ -18,7 +18,7 @@ async function GetGenre () {
 
     const response = await fetch(url, options)
     const data = (await response.json()) as Genres
-
+    
     return(
         <div className={styles.Genre}>
               <h2>Search By Category</h2>

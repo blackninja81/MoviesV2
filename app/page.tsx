@@ -1,14 +1,21 @@
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
 import styles from './styles.module.scss'
 import GetGenre from '@/utils/getGenre'
-import GenreList from '@/components/genre/genre'
+import Movie from '@/components/MovieCarousel/Movie'
+import { GetPopularMovies, GetTopRatedMovies, GetUpcomingMovies } from '@/utils/getMovie'
 
-export default function Home() {
+export default async function Home() {
+  const UpcomingMovies = await GetUpcomingMovies();
+  const PopularMovies = await GetPopularMovies();
+  const TopRatedMovies = await GetTopRatedMovies();
+
+
   return (
    <main className={styles.landing}>
-   {/* <GenreList/> */}
    <GetGenre/>
+   <Movie movies={UpcomingMovies} title="Upcoming"/>
+   <Movie movies={PopularMovies} title="Popular"/>
+   <Movie movies={TopRatedMovies} title="Cinema Classics"/>
    </main>
   )
 }
