@@ -3,11 +3,11 @@ import styles from './styles.module.scss'
 import { Genre } from '../../../typings';
 import Link from 'next/link';
 
-type GenreListProps = {
+type Props = {
   genre: Genre;
  };
 
-const GenreList = ({ genre }) => {
+const GenreList = ({ genre }: Props) => {
   return (
     <Link href={`/genre/${genre.id}?genre=${genre.name}`} target='_blank'>
     <div className={styles.genre}>{genre.name}</div>

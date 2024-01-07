@@ -1,0 +1,49 @@
+.movie_container {
+  h2 {
+    font-size: 50px;
+    padding: 1rem 2rem;
+  }
+}
+.movies {
+  padding: 10px;
+  display: flex;
+  overflow: auto;
+}
+.movies_card {
+  z-index: -1;
+  padding: 10px;
+  object-fit: contain;
+  min-width: 20vw;
+  flex-grow: 2;
+  margin: 10px;
+  text-align: center;
+  overflow: hidden;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  .img {
+    border-radius: 40px;
+    height: 20rem;
+    padding: 2rem;
+  }
+  h4 {
+    padding: 10px;
+  }
+}
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+  .movies_card {
+    min-width: 90vw;
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .movies_card {
+    min-width: 50vw;
+  }
+}

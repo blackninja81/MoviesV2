@@ -5,11 +5,11 @@
     }
 }
 .mainGenre {
-  margin: 1rem;
-  display: grid;
-  gap: 50px;
-  padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 1rem;
+    display: grid;
+    gap: 50px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .genre{
     display: flex;

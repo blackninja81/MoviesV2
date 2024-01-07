@@ -10,6 +10,7 @@ export type Genres = {
     genres: Genre[];
 }
 export type Movie = {
+    id: number,
     adult: boolean;
     backgroung_path: string;
     genre_ids: number[];
@@ -26,6 +27,7 @@ export type Movie = {
 }
 export type searchResults = {
     page: number;
+    id: number,
     results: Movie[];
     total_pages: number;
     total_results: number;
