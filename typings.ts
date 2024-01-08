@@ -3,14 +3,16 @@ export type Genre = {
     name:string;
 }
 export type GenreListProps = {
+    id: string,
     genre: Genre;
    };
    
 export type Genres = {
+    id: string,
     genres: Genre[];
 }
 export type Movie = {
-    id: number,
+    id: string,
     adult: boolean;
     background_path: string;
     genre_ids: number[];
