@@ -34,9 +34,9 @@ export default async function Home() {
         </AccordionItem>
       </Accordion>
 
-      <Movie movies={UpcomingMovies} title="Upcoming" />
-      <Movie movies={PopularMovies} title="Popular" />
-      <Movie movies={TopRatedMovies} title="Cinema Classics" />
+      <Movie movies={UpcomingMovies} title="Upcoming" isVertical/>
+      <Movie movies={PopularMovies} title="Popular" isVertical/>
+      <Movie movies={TopRatedMovies} title="Cinema Classics" isVertical/>
     </main>
   );
 }
