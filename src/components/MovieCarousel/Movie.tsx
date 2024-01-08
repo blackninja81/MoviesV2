@@ -14,7 +14,7 @@ const Movie = ({movies, title, isVertical} : Props) => {
       <h2><b>{title}</b></h2>
     <div className={styles.movies}>
         {movies?.map(movie => (
-            <MovieCard movie={movie}/>
+            <MovieCard key={movie.id} movie={movie}/>
             ))}
     </div>
             </div>
