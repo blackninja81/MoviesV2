@@ -27,8 +27,7 @@ function Banner({ movies }: { movies: Movie[] }) {
         {movies && Array.isArray(movies) ? (
           movies.map((movie) => {
             let date = new Date(movie.release_date);
-            let options = { day: "numeric", month: "short", year: "numeric" };
-            let formattedDate = date.toLocaleDateString("en-US", options);
+            let options: Intl.DateTimeFormatOptions = { day: '2-digit', month: 'long', year: 'numeric' };            let formattedDate = date.toLocaleDateString("en-US", options);
             return (
               <div key={movie.id} className={styles.embla__slide}>
                 <Image

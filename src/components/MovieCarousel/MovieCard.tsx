@@ -24,7 +24,7 @@ if (movie && movie.release_date) {
   return (
     <div className={styles.movies_card}>
       <Image
-        src={getImagePath(movie.backgroung_path || movie.poster_path)}
+        src={getImagePath(movie.background_path || movie.poster_path)}
         alt={movie.title}
         width={1920}
         height={1080}
