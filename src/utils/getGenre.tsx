@@ -21,7 +21,6 @@ async function GetGenre () {
     
     return(
         <div className={styles.Genre}>
-              <h2>Search By Category</h2>
             <div className={styles.mainGenre}>
           {data.genres.map((genre) => (
             <GenreList key={genre.id} genre={genre}/>

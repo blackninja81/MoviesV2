@@ -9,7 +9,7 @@ type Props = {
 
 const GenreList = ({ genre }: Props) => {
   return (
-    <Link href={`/genre/${genre.id}?genre=${genre.name}`} target='_blank'>
+    <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
     <div className={styles.genre}>{genre.name}</div>
     </Link>
   )

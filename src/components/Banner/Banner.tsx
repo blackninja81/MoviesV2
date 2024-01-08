@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { Movie } from "../../../typings";
@@ -20,7 +19,7 @@ Autoplay.globalOptions = {
 
 function Banner({ movies }: { movies: Movie[] }) {
   const [emblaRef] = useEmblaCarousel({ loop: true, duration: 100 }, [
-    Autoplay(),
+    Autoplay()
   ]);
   return (
     <div className={styles.embla} ref={emblaRef}>
@@ -44,8 +43,8 @@ function Banner({ movies }: { movies: Movie[] }) {
                   <h1>{formattedDate}</h1>
                   <h1>{movie.overview}</h1>
                   <div className={styles.text_buttons}>
-                    <Button>Read More<ReaderIcon/></Button>
-                    <Button>Watch Trailer<PlayIcon/></Button>
+                    <Button className={styles.read_button}>Read More<ReaderIcon/></Button>
+                    <Button className={styles.trailer_button}>Watch Trailer<PlayIcon/></Button>
                   </div>
                 </div>
               </div>
