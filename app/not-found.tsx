@@ -1,18 +1,18 @@
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./styles.module.scss";
+import icon from "../public/assets/404.jpeg";
+import { Button } from "@/components/ui/button";
 
 const Custom404 = () => {
- return (
-   <div>
-     <h1>404 - Page Not Found</h1>
-     <p>
-       The page you are looking for might have been removed, had its name
-       changed, or is temporarily unavailable.
-     </p>
-     <Link href="/">
-       Go back to the home page
-     </Link>
-   </div>
- );
+  return (
+    <div className={styles.not_found}>
+      <Image src={icon} alt="404-not found" height={400} width={750} />
+      <Link href="/">
+        <Button>Go back to the home page</Button>
+      </Link>
+    </div>
+  );
 };
 
 export default Custom404;

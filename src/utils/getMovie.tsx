@@ -40,6 +40,12 @@ export async function GetPopularMovies(){
     return data.results;
 
 }
+export async function GetCurrentMovies(){
+  const url = new URL('https://api.themoviedb.org/3/movie/now_playing');
+  const data = await GetMovie(url)
+  return data.results;
+
+}
 
 export async function GetDiscoverMovies(id?:string, keywords?:string){
     const url = new URL('https://api.themoviedb.org/3/discover/movie');
@@ -51,6 +57,7 @@ export async function GetDiscoverMovies(id?:string, keywords?:string){
     return data.results;
 
 }
+
 export async function GetSearchMovies(term:string){
     const url = new URL('https://api.themoviedb.org/3/search/movie');
     url.searchParams.set("query", term)

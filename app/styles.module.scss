@@ -1,4 +1,13 @@
 .mainSection{
-    padding-top: 14vh;
+    padding: 14vh 0;
     // height: 300vh;
+}
+.not_found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    Button{
+        margin: 20px;
+    }
 }
