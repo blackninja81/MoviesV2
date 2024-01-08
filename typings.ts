@@ -12,10 +12,12 @@ export type Genres = {
 export type Movie = {
     id: number,
     adult: boolean;
-    backgroung_path: string;
+    background_path: string;
     genre_ids: number[];
+    backdrop_path: string;
     original_language:string;
     original_title: string;
+    originalFactory: string;
     overview:string;
     popularity:number;
     poster_path?:string;
