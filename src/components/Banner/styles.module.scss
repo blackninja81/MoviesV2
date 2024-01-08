@@ -1,19 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 .embla {
-    overflow: hidden;
+  overflow: hidden;
 }
 .embla__container {
-    display: flex;
+  display: flex;
 }
 .embla__slide {
-    flex: 0 0 100%;
-    min-width: 0;
-    img{
-        object-fit: contain;
-        padding: 10px;
-    border-radius: 20px;
+  flex: 0 0 100%;
+  min-width: 0;
+  img {
+    object-fit: contain;
   }
-  .text_overview{
+  .text_overview {
     position: absolute;
+    font-family: "Montserrat", sans-serif;
     z-index: 20;
     padding: 52px;
     margin-top: 20%;
@@ -26,38 +27,67 @@
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .text_buttons{
-    Button{
-        margin: 20px;
-        padding: 20px;
-        margin-left: 0;
-        :nth-child(1){
-            margin-left: 10px;
-        }
+  .text_buttons {
+    Button {
+      margin: 20px;
+      padding: 20px;
+      margin-left: 0;
+      :nth-child(1) {
+        margin-left: 10px;
+      }
     }
   }
-  h1{
-    &:nth-child(1){
-        font-size: 40px;
-        font-weight: bold;
+  .read_button{
+    background-color: white;
+    color: black;
+    transition: .5s;
+    border: 1px;
+    &:hover{
+      color: white;
+      background-color: black;
     }
-    &:nth-child(2){
-        padding: 10px;
-        font-size: 15px;
+  }
+  .trailer_button {
+    color: white;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    transition: .5s;
+    &:hover{
+      border: black solid 1px;
+      color: white;
+      background-color: black;
     }
-    &:nth-child(3){
-        font-size: 20px;
+  }
+  h1 {
+    &:nth-child(1) {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    &:nth-child(2) {
+      padding: 10px;
+      font-size: 15px;
+    }
+    &:nth-child(3) {
+      font-size: 15px;
     }
   }
 }
 /* Small screens (phones) */
 @media only screen and (max-width: 600px) {
-    .text_overview{
-        display: none;
-    }
+  .text_overview {
+    display: none;
   }
-  
-  /* Medium screens (tablets) */
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .embla {
+    height: 60vh;
   }
+}

@@ -48,7 +48,7 @@ export function SearchInput() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Search..."{...field}/>
+                <Input className={styles.input_data} placeholder="Search..."{...field}/>
               </FormControl>
             </FormItem>
           )}

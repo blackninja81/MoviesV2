@@ -11,7 +11,7 @@ type Props = {
 const Movie = ({movies, title, isVertical} : Props) => {
   return (
       <div className={styles.movie_container}>
-      <h2>{title}</h2>
+      <h2><b>{title}</b></h2>
     <div className={styles.movies}>
         {movies?.map(movie => (
             <MovieCard key={movies.id} movie={movie}/>

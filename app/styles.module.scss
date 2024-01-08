@@ -1,6 +1,6 @@
 .mainSection{
-    padding: 14vh 0;
-    // height: 300vh;
+    font-family: 'Montserrat', sans-serif;
+
 }
 .not_found{
     display: flex;
@@ -10,4 +10,30 @@
     Button{
         margin: 20px;
     }
+}
+.category_accord{
+  margin: 5rem 10rem;
+  h1{
+    font-size: 30px;
+    text-decoration: none;
+  }
+}
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+    .mainSection{
+        padding: 14vh 0;
+  }
+  .category_accord{
+    margin: 1rem;
+  }
+  
+  /* Medium screens (tablets) */
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .mainSection{
+    padding: 14vh 0;
+}
+  .movies_card {
+    min-width: 50vw;
+  }
 }

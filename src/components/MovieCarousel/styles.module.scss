@@ -12,12 +12,17 @@
 .movies_card {
   z-index: -1;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   object-fit: contain;
   min-width: 20vw;
   flex-grow: 2;
   margin: 10px;
   text-align: center;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.04);
   border-radius: 16px;
