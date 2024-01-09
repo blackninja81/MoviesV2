@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import styles from '../components/genre/styles.module.scss'
 import GenreList from '../components/genre/genre';
 import { Genres } from '../../typings';

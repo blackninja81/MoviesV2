@@ -4,6 +4,8 @@ import styles from "../styles.module.scss";
 import NotFound from "../../not-found";
 import { GetPopularMovies, GetSearchMovies } from "@/utils/getMovie";
 import Movie from "@/components/MovieCarousel/Movie";
+import Series from "@/components/SeriesCarousel/Series";
+import { GetSearchSeries } from "@/utils/getSeries";
 
 type props = {
   params: {
@@ -16,6 +18,7 @@ async function Searchpage ({ params: { slug } }: props) {
 
   //Get searched Movies
   const movies = await GetSearchMovies(newSlug);
+  const series = await GetSearchSeries(newSlug);
   const popularMovies = await GetPopularMovies();
 
   return (
@@ -23,7 +26,10 @@ async function Searchpage ({ params: { slug } }: props) {
       {slug ? (
         <div>
           <div className={styles.movie_search}>
-          <Movie title={`Results for ${newSlug}`} movies={movies} isVertical />
+          <Movie title={`Movie Results for ${newSlug}`} movies={movies} isVertical />
+          </div>
+          <div className={styles.movie_search}>
+          <Series title={`Series Results for ${newSlug}`} series={series} isVertical />
           </div>
           <div className={styles.movie_search}>
           <Movie title={"Recommendations"} movies={popularMovies} isVertical />

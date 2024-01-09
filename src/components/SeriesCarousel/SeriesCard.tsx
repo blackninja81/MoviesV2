@@ -1,19 +1,14 @@
 import React from "react";
-import { Movie,MDetails } from "../../../typings";
+import { Series } from "../../../typings";
 import Image from "next/image";
 import styles from './styles.module.scss'
 import getImagePath from "@/utils/getImagePath";
-import Link from "next/link";
 
-type Props = {
-  details: MDetails;
-  movie: Movie ;
-}
+const SeriesCard = ({ series }: { series: Series }) => {
 
-const MovieCard = ({ movie, details }: Props) => {
   let formattedDate = "";
-if (movie && movie.release_date) {
- let dateParts = movie.release_date.split("-");
+if (series && series.first_air_date) {
+ let dateParts = series.first_air_date.split("-");
  if (dateParts.length === 3) { // Check if the date is in the correct format
    let monthNumber = parseInt(dateParts[1]);
    let dateObject = new Date();
@@ -26,21 +21,20 @@ if (movie && movie.release_date) {
 } else {
  formattedDate = "Cerca"; // Return a generic date if release_date doesn't exist
 }
+
   return (
-      <Link href={`/movie/${movie.id}`}>
     <div className={styles.movies_card}>
       <Image
-        src={getImagePath(movie.background_path || movie.poster_path)}
-        alt={movie.title}
+        src={getImagePath(series.background_path || series.poster_path)}
+        alt={series.original_name}
         width={1920}
         height={1080}
-        key={movie.id}
+        key={series.id}
       />
-      <h4><b>{movie.title}</b></h4>
+      <h4><b>{series.original_name}</b></h4>
       <h4>{formattedDate}</h4>
     </div>
-      </Link>
   );
 };
 
-export default MovieCard;
+export default SeriesCard;
