@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.details_page {
+  overflow: hidden;
+}
+.backdrop {
+  z-index: -1;
+  position: absolute;
+.img{
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    height: 100%;
+}
+.poster {
+  height: 100%;
+  object-fit: fill;
+  width: 40vh;
+  border-radius: 10px;
+}
+.details_card {
+    color: white;
+//   height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 17vh 5rem;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.details_text {
+  h1 {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h4 {
+    &:nth-child(1) {
+      font-size: 20px;
+      width: 150px;
+      text-align: center;
+      padding: 10px;
+    }
+    &:nth-child(3){
+        padding: 5px;
+        font-size: 25px;
+    }
+    &:nth-child(4){
+        padding: 5px;
+        font-size: 15px;
+    }
+    &:nth-child(5){
+        padding: 5px;
+        font-size: 20px;
+    }
+    &:nth-child(6){
+        font-size: 15px;
+        padding: 5px;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10rem;
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+.details_card{
+    flex-direction: column;
+}
+.poster{
+    width: 70vw;
+    height: 70vh;
+}
+
+}
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+    .details_card{
+        padding: 0;
+        flex-direction: column;
+    }
+    .backdrop{
+        display: none;
+    }
+    .poster{
+        width: 100vw;
+    }
+    .details_text{
+        width: 100vw;
+        padding: 0;
+        justify-content: center;
+        // align-items: center;
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Movie } from '../../../typings'
 import MovieCard from './MovieCard'
+import { Movie } from '../../../typings'
 import styles from './styles.module.scss'
 
 type Props = {
