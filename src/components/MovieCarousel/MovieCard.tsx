@@ -6,7 +6,7 @@ import getImagePath from "@/utils/getImagePath";
 import Link from "next/link";
 
 type Props = {
-  details: MDetails;
+  details?: MDetails;
   movie: Movie ;
 }
 
