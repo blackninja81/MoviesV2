@@ -22,4 +22,3 @@ export default async function DetailsPage() {
     <Details details={details}/>
   </div>
 )}
-
