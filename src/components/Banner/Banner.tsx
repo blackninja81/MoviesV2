@@ -48,7 +48,7 @@ function Banner({ movies }: Props ) {
                   <h1>{movie.overview}</h1>
                   <div className={styles.text_buttons}>
                     <Button className={styles.read_button}>Read More<ReaderIcon/></Button>
-                    <Button className={styles.trailer_button}>Watch Trailer<PlayIcon/></Button>
+                    {/* <Button className={styles.trailer_button}>Watch Trailer<PlayIcon/></Button> */}
                   </div>
                 </div>
         </Link>
