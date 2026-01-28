@@ -3,32 +3,32 @@
 .details_page {
   overflow: hidden;
 }
+
 .backdrop {
   z-index: -1;
-  position: absolute;
+  position: fixed;
+  filter: blur(30px) opacity(0.4);
+  height: 100%;
 .img{
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-    height: 100%;
 }
 .poster {
+  margin-top: 20vh;
   height: 100%;
   object-fit: fill;
   width: 40vh;
   border-radius: 10px;
 }
 .details_card {
-    color: white;
-//   height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  padding: 17vh 5rem;
-  backdrop-filter: blur(1px);
-  background-color: rgba(0, 0, 0, 0.85);
+  padding: 5vh 5rem;
+  
 }
 .details_text {
   h1 {
@@ -72,6 +72,7 @@
 }
 .poster{
     width: 70vw;
+    margin-top: 0vh;
     height: 70vh;
 }
 
@@ -87,6 +88,7 @@
     }
     .poster{
         width: 100vw;
+        margin-top: 0vh;
     }
     .details_text{
         width: 100vw;

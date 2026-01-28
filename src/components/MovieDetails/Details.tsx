@@ -1,18 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import styles from "./styles.module.scss";
 import { MDetails } from "../../../typings";
 import getImagePath from "@/utils/getImagePath";
-import { GetPopularMovies, GetSearchMovies } from "@/utils/getMovie";
 import Movie from "@/components/MovieCarousel/Movie";
-import Image from "next/image";
+import { getSimilarMovies, getRecommendationsMovies } from "@/utils/getMovie";
+import { Movie as MovieType } from "../../../typings";
 
 type Props = {
   details: MDetails;
 };
 
-async function Details ({ details }: Props) {
+function Details({ details }: Props) {
+  const [similarMovies, setSimilarMovies] = useState<MovieType[]>([]);
+  const [recommendations, setRecommendations] = useState<MovieType[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+  const fetchRecommendations = async () => {
+    setLoading(true);
+    try {
+      const [similarData, recommendationsData] = await Promise.all([
+        getSimilarMovies(details.id),
+        getRecommendationsMovies(details.id)
+      ]);
+      setSimilarMovies(similarData || []); // Add fallback to empty array
+      setRecommendations(recommendationsData || []); // Add fallback to empty array
+    } catch (error) {
+      console.error('Error fetching recommendations:', error);
+      // Set empty arrays on error
+      setSimilarMovies([]);
+      setRecommendations([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (details?.id) {
+    fetchRecommendations();
+  }
+}, [details.id]);
+
   let formattedDate = "";
-  if (details && details.release_date) {
+  if (details?.release_date) {
     let dateParts = details.release_date.split("-");
     if (dateParts.length === 3) {
       // Check if the date is in the correct format
@@ -29,7 +59,7 @@ async function Details ({ details }: Props) {
   } else {
     formattedDate = "Cerca"; // Return a generic date if release_date doesn't exist
   }
-  const popularMovies = await GetPopularMovies();
+
   return (
     <div className={styles.details_page}>
       <Image
@@ -61,18 +91,18 @@ async function Details ({ details }: Props) {
         <div className={styles.details_text}>
           <h4>{details.status}</h4>
           <h1>{details.title}</h1>
-          <h4><i>{details.tagline}</i></h4>
+          <h4>
+            <i>{details.tagline}</i>
+          </h4>
           <h4>{formattedDate}</h4>
           <h4>{details.overview}</h4>
           <h4>{details.runtime} Minutes</h4>
           <h4>{details.vote_average}</h4>
         </div>
       </div>
-      <div className={styles.movie_search}>
-          <Movie title={"Recommendations"} movies={popularMovies} isVertical />
-          </div>
+      
     </div>
   );
-};
+}
 
 export default Details;
