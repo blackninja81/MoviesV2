@@ -94,3 +94,15 @@ export async function getMovieDetails(id:string) {
   const data = await GetDetails(url)
    return data;
 }
+
+export async function getSimilarMovies(id:string) {
+  const url = new URL(`https://api.themoviedb.org/3/movie/${id}/similar`);
+  const data = await GetMovie(url)
+  return data.results;
+}
+
+export async function getRecommendationsMovies(id:string) {
+  const url = new URL(`https://api.themoviedb.org/3/movie/${id}/recommendations`);
+  const data = await GetMovie(url)
+  return data.results;
+}

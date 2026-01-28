@@ -71,6 +71,12 @@ export type Series = {
     vote_average:number;
     vote_count: number;
 }
+
+export interface SeriesProps {
+    title?: string;
+  isVertical: boolean;
+    series:Series[]
+}
 export type SeriesSearchResults = {
     page: number;
     id: number,
